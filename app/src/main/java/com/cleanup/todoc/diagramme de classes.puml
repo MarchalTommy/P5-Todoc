@@ -1,0 +1,24 @@
+@startuml
+abstract class com.cleanup.todoc.database.TaskDatabase
+abstract class com.cleanup.todoc.database.ProjectDatabase
+class com.cleanup.todoc.model.Project
+class com.cleanup.todoc.model.Task
+class com.cleanup.todoc.repository.TaskRepository
+class com.cleanup.todoc.repository.ProjectRepository
+class com.cleanup.todoc.ui.MainActivity
+class com.cleanup.todoc.ui.TasksAdapter
+class com.cleanup.todoc.viewmodel.TodocViewModel
+interface com.cleanup.todoc.dao.TaskDao
+interface com.cleanup.todoc.dao.ProjectDao
+
+com.cleanup.todoc.ui.TasksAdapter <-> com.cleanup.todoc.ui.MainActivity
+com.cleanup.todoc.ui.MainActivity <|- com.cleanup.todoc.viewmodel.TodocViewModel
+com.cleanup.todoc.viewmodel.TodocViewModel <|-- com.cleanup.todoc.repository.TaskRepository
+com.cleanup.todoc.repository.TaskRepository <|-- com.cleanup.todoc.database.TaskDatabase
+com.cleanup.todoc.database.TaskDatabase <|-- com.cleanup.todoc.dao.TaskDao
+com.cleanup.todoc.dao.TaskDao <|-- com.cleanup.todoc.model.Task
+
+com.cleanup.todoc.repository.ProjectRepository <|-- com.cleanup.todoc.database.ProjectDatabase
+com.cleanup.todoc.database.ProjectDatabase <|-- com.cleanup.todoc.dao.ProjectDao
+com.cleanup.todoc.dao.ProjectDao <|-- com.cleanup.todoc.model.Project
+@enduml
