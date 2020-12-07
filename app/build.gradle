@@ -54,8 +54,6 @@ dependencies {
     implementation "io.reactivex.rxjava3:rxjava:3.0.7"
 // RxAndroid
     implementation "io.reactivex.rxjava3:rxandroid:3.0.0"
-// EventBus
-    implementation 'org.greenrobot:eventbus:3.2.0'
 // Testing
     testImplementation "androidx.arch.core:core-testing:2.1.0"
     androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
