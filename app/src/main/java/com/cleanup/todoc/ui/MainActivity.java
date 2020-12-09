@@ -127,9 +127,7 @@ public class MainActivity extends AppCompatActivity implements TasksAdapter.Dele
      * Setting up the ViewModel
      */
     private void configureViewModel() {
-        this.todocViewModel = new ViewModelProvider(this, new TaskViewModelFactory(
-                Injection.provideTaskRep(this),
-                Injection.provideProjectRep(this)))
+        this.todocViewModel = new ViewModelProvider(this, Injection.provideViewModelFactory(this))
                 .get(TodocViewModel.class);
     }
 
